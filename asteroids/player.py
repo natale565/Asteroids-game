@@ -3,6 +3,9 @@ from constants import PLAYER_RADIUS
 from constants import LINE_WIDTH
 from constants import PLAYER_TURN_SPEED
 from constants import PLAYER_SPEED
+from constants import SHOT_RADIUS
+from constants import PLAYER_SHOOT_SPEED
+from shot import Shot
 import pygame
 
 
@@ -41,8 +44,20 @@ class Player(CircleShape):
         if keys[pygame.K_d]:
             self.rotate(dt)
 
+        if keys[pygame.K_SPACE]:
+            self.shoot()
+
     def move(self, dt):
         unit_vector = pygame.Vector2(0, 1)
         rotated_vector = unit_vector.rotate(self.rotation)
         rotated_with_speed_vector = rotated_vector * PLAYER_SPEED * dt
         self.position += rotated_with_speed_vector
+    
+    def shoot(self):
+       shot = Shot(self.position.x, self.position.y, SHOT_RADIUS)
+       vector = pygame.Vector2(0, 1)
+       vector = vector.rotate(self.rotation)
+       shot.velocity = vector * PLAYER_SHOOT_SPEED
+
+        
+
