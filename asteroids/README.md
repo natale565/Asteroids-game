@@ -72,6 +72,13 @@ The shooting mechanic also challenged me, especially creating a cooldown system 
 
 Overall, I learned that most programming problems become easier when broken into smaller steps and solved one piece at a time.
 
+
+## What I Learned
+
+This project helped me improve my confidence with Python and object-oriented programming. I gained hands-on experience working with game loops, collision systems, reusable classes, and real-time user input.
+
+It also helped me understand how larger programs are organized across multiple files and classes.
+
 ---
 
 ## How to Run
@@ -80,3 +87,6 @@ Overall, I learned that most programming problems become easier when broken into
 
 ```bash
 pip install pygame
+
+2. To run the project:
+    uv run main.py
